@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVIS RESIDENCE — Sutorina, Igalo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Mulish:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Mulish',sans-serif;color:#1d2a2d;background:#fbf8f2;-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:#16697a;text-decoration:none}
+  a:hover{color:#0d4c5a}
+  ::selection{background:#e7d8be}
+  img{display:block;max-width:100%}
+  input,textarea,select,button{font-family:inherit}
+  @keyframes floatUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+  .car::-webkit-scrollbar{display:none}
+  @media(max-width:860px){
+    .mainnav{display:none !important}
+    .cols2{grid-template-columns:1fr !important}
+  }
+  @media(max-width:430px){
+    .form2{grid-template-columns:1fr !important}
+    header img{height:48px !important}
+    .amen-card{padding:28px 22px !important}
+  }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#fbf8f2;overflow-x:hidden">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(251,248,242,.82);border-bottom:1px solid rgba(29,42,45,.08)">
+    <div style="max-width:1240px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="#top" style="display:flex;align-items:center">
+        <img src="uploads/Foto%2015.06.26,%2014%2057%2056.png" alt="AVIS Apartments" style="height:60px;width:auto;display:block">
+      </a>
+      <nav class="mainnav" style="display:flex;align-items:center;gap:30px">
+        <a href="#apartments" data-i18n="nav_apts" style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1d2a2d">Apartmani</a>
+        <a href="#reviews" data-i18n="nav_reviews" style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1d2a2d">Utisci</a>
+        <a href="#location" data-i18n="nav_location" style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1d2a2d">Lokacija</a>
+        <a href="#contact" data-i18n="nav_contact" style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1d2a2d">Kontakt</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="display:flex;gap:2px;border:1px solid rgba(29,42,45,.16);border-radius:20px;padding:3px">
+          <button data-lang="me" onClick="{{ setLangME }}" style="border:none;background:#16697a;color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 11px;border-radius:16px;cursor:pointer">ME</button>
+          <button data-lang="en" onClick="{{ setLangEN }}" style="border:none;background:transparent;color:#5c6b6d;font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 11px;border-radius:16px;cursor:pointer">EN</button>
+          <button data-lang="ru" onClick="{{ setLangRU }}" style="border:none;background:transparent;color:#5c6b6d;font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 11px;border-radius:16px;cursor:pointer">RU</button>
+        </div>
+        <a href="tel:+38265641724" data-i18n="btn_book" style="background:#16697a;color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em;padding:10px 18px;border-radius:24px">Rezerviši</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden">
+    <div style="position:absolute;inset:0">
+      <image-slot id="avis-hero" shape="rect" fit="cover" src="uploads/Foto%20Rade.png" placeholder="Naslovna slika — bazen / kompleks / pogled na more"></image-slot>
+    </div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,76,90,.28) 0%,rgba(13,76,90,.05) 34%,rgba(13,76,90,.62) 100%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 28px 72px;width:100%;pointer-events:none">
+      <p data-i18n="hero_kicker" style="color:#f3ead9;font-size:14px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;margin-bottom:18px;animation:floatUp .8s ease both">Sutorina · Igalo · Crna Gora</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;color:#fff;font-weight:600;font-size:clamp(52px,8vw,104px);line-height:.98;letter-spacing:.02em;animation:floatUp .9s ease .05s both">AVIS RESIDENCE</h1>
+      <p data-i18n="hero_sub" style="color:#f6f1e8;font-size:clamp(17px,2.2vw,22px);max-width:560px;margin-top:22px;font-weight:300;animation:floatUp 1s ease .12s both">Vaš savršen odmor — 4 moderna apartmana sa bazenom i restoranom, na mirnoj lokaciji nadomak mora i Herceg Novog.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;pointer-events:auto;animation:floatUp 1.1s ease .2s both">
+        <a href="#contact" data-i18n="hero_cta1" style="background:#e7d8be;color:#0d4c5a;font-size:15px;font-weight:700;letter-spacing:.03em;padding:15px 30px;border-radius:30px">Pošalji upit</a>
+        <a href="https://wa.me/38265641724" target="_blank" data-i18n="hero_cta2" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.55);color:#fff;font-size:15px;font-weight:700;letter-spacing:.03em;padding:15px 30px;border-radius:30px;backdrop-filter:blur(4px)">WhatsApp rezervacija</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <section style="background:#0d4c5a;color:#f3ead9">
+    <div style="max-width:1240px;margin:0 auto;padding:38px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px">
+      <div style="text-align:center">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#fff;line-height:1">4</div>
+        <div data-i18n="feat_apts" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;color:#a9c4c9">Moderna apartmana</div>
+      </div>
+      <div style="text-align:center;border-left:1px solid rgba(255,255,255,.14)">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#fff;line-height:1">1 km</div>
+        <div data-i18n="feat_sea" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;color:#a9c4c9">Do najbliže plaže</div>
+      </div>
+      <div style="text-align:center;border-left:1px solid rgba(255,255,255,.14)">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#fff;line-height:1">∞</div>
+        <div data-i18n="feat_pool" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;color:#a9c4c9">Bazen &amp; restoran</div>
+      </div>
+      <div style="text-align:center;border-left:1px solid rgba(255,255,255,.14)">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#fff;line-height:1">✓</div>
+        <div data-i18n="feat_parking" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;color:#a9c4c9">Besplatan parking</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section style="max-width:900px;margin:0 auto;padding:96px 28px 40px;text-align:center">
+    <p data-i18n="about_kicker" style="color:#16697a;font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-bottom:20px">Dobrodošli</p>
+    <h2 data-i18n="about_title" style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,5vw,54px);line-height:1.08;color:#1d2a2d">Spoj komfora, odmora i vrhunske usluge</h2>
+    <p data-i18n="about_p1" style="font-size:18px;color:#4a5a5c;max-width:660px;margin:26px auto 0;font-weight:300">Idealno za parove, porodice i prijatelje koji žele bezbrižan odmor na crnogorskom primorju. Uživajte u miru, suncu i mediteranskoj atmosferi — sve na jednom mjestu.</p>
+  </section>
+
+  <!-- APARTMENTS -->
+  <section id="apartments" style="max-width:1240px;margin:0 auto;padding:56px 28px 40px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px">
+      <div>
+        <p data-i18n="apts_kicker" style="color:#16697a;font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-bottom:12px">Smještaj</p>
+        <h2 data-i18n="apts_title" style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,4.4vw,50px);color:#1d2a2d;line-height:1">Naša četiri apartmana</h2>
+      </div>
+      <p data-i18n="apts_sub" style="max-width:340px;color:#5c6b6d;font-size:15px;font-weight:300">Svaki apartman ima klimu, WiFi, opremljenu kuhinju, kupatilo i terasu.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+
+      <!-- AVIS 1 -->
+      <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 18px 44px -30px rgba(13,76,90,.55);border:1px solid rgba(29,42,45,.06);display:flex;flex-direction:column">
+        <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#eef2f1">
+          <div data-track="1" class="car" style="display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none">
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-1" shape="rect" fit="cover" src="uploads/Foto%2015.06.26,%2013%2039%2049%20(4).jpg"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-2" shape="rect" fit="cover" src="uploads/Foto%2015.06.26,%2013%2039%2050.jpg"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-3" shape="rect" fit="cover" src="uploads/Foto%2015.06.26,%2013%2039%2050%20(1).jpg"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-4" shape="rect" fit="cover" src="uploads/Foto%2015.06.26,%2013%2039%2049%20(1).jpg"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-5" shape="rect" fit="cover" src="uploads/Foto%2015.06.26,%2013%2039%2049.jpg"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-6" shape="rect" fit="cover" src="uploads/Foto%2015.06.26,%2013%2039%2048%20(1).jpg"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-7" shape="rect" fit="cover" src="uploads/Foto%2015.06.26,%2013%2039%2049%20(2).jpg"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-8" shape="rect" fit="cover" src="uploads/Foto%2015.06.26,%2013%2039%2049%20(3).jpg"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a1-9" shape="rect" fit="cover" src="uploads/Foto%2018.07.26,%2000%2042%2030%20(1)%20(1).jpg"></image-slot></div>
+          </div>
+          <button onClick="{{ carPrev }}" aria-label="prev" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:22px;line-height:1;padding-bottom:3px;cursor:pointer;z-index:3;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center">‹</button>
+          <button onClick="{{ carNext }}" aria-label="next" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:22px;line-height:1;padding-bottom:3px;cursor:pointer;z-index:3;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center">›</button>
+          <span style="position:absolute;top:14px;left:14px;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:11px;font-weight:700;letter-spacing:.14em;padding:6px 12px;border-radius:20px;z-index:3">AVIS 1</span>
+        </div>
+        <div style="padding:22px 22px 24px;display:flex;flex-direction:column;flex:1">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:#1d2a2d">Studio · 27 m²</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 14px">
+            <span data-i18n="tag_4guests" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">4 osobe</span>
+            <span data-i18n="tag_terrace30" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">Terasa 30 m²</span>
+          </div>
+          <p data-i18n="a1_desc" style="font-size:15px;color:#4a5a5c;font-weight:300;flex:1">Studio u jednoj prostoriji: bračni krevet na sprat i kauč na razvlačenje, potpuno opremljena kuhinja i velika terasa od 38 m². Kapacitet do 4 osobe.</p>
+          <a href="#contact" data-i18n="btn_inquire" style="margin-top:18px;text-align:center;border:1.5px solid #16697a;color:#16697a;font-size:14px;font-weight:700;letter-spacing:.04em;padding:11px;border-radius:24px">Upit za termin</a>
+        </div>
+      </article>
+
+      <!-- AVIS 2 -->
+      <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 18px 44px -30px rgba(13,76,90,.55);border:1px solid rgba(29,42,45,.06);display:flex;flex-direction:column">
+        <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#eef2f1">
+          <div data-track="1" class="car" style="display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none">
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a2-1" shape="rect" fit="cover" placeholder="Avis 2 · dodaj sliku 1"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a2-2" shape="rect" fit="cover" placeholder="Avis 2 · dodaj sliku 2"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a2-3" shape="rect" fit="cover" placeholder="Avis 2 · dodaj sliku 3"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a2-4" shape="rect" fit="cover" placeholder="Avis 2 · dodaj sliku 4"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a2-5" shape="rect" fit="cover" placeholder="Avis 2 · dodaj sliku 5"></image-slot></div>
+          </div>
+          <button onClick="{{ carPrev }}" aria-label="prev" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:22px;line-height:1;padding-bottom:3px;cursor:pointer;z-index:3;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center">‹</button>
+          <button onClick="{{ carNext }}" aria-label="next" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:22px;line-height:1;padding-bottom:3px;cursor:pointer;z-index:3;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center">›</button>
+          <span style="position:absolute;top:14px;left:14px;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:11px;font-weight:700;letter-spacing:.14em;padding:6px 12px;border-radius:20px;z-index:3">AVIS 2</span>
+        </div>
+        <div style="padding:22px 22px 24px;display:flex;flex-direction:column;flex:1">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:#1d2a2d">Studio · 50 m²</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 14px">
+            <span data-i18n="tag_4guests" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">4 osobe</span>
+            <span data-i18n="tag_terrace" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">Terasa</span>
+          </div>
+          <p data-i18n="a2_desc" style="font-size:15px;color:#4a5a5c;font-weight:300;flex:1">Prostrani studio od 50 m² sa bračnim krevetom i ugaonom garniturom na razvlačenje, kuhinjom i kupatilom. Ispred apartmana mini terasa sa stolom i stolicama. Do 4 osobe.</p>
+          <a href="#contact" data-i18n="btn_inquire" style="margin-top:18px;text-align:center;border:1.5px solid #16697a;color:#16697a;font-size:14px;font-weight:700;letter-spacing:.04em;padding:11px;border-radius:24px">Upit za termin</a>
+        </div>
+      </article>
+
+      <!-- AVIS 3 -->
+      <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 18px 44px -30px rgba(13,76,90,.55);border:1px solid rgba(29,42,45,.06);display:flex;flex-direction:column">
+        <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#eef2f1">
+          <div data-track="1" class="car" style="display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none">
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a3-1" shape="rect" fit="cover" placeholder="Avis 3 · dodaj sliku 1"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a3-2" shape="rect" fit="cover" placeholder="Avis 3 · dodaj sliku 2"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a3-3" shape="rect" fit="cover" placeholder="Avis 3 · dodaj sliku 3"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a3-4" shape="rect" fit="cover" placeholder="Avis 3 · dodaj sliku 4"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a3-5" shape="rect" fit="cover" placeholder="Avis 3 · dodaj sliku 5"></image-slot></div>
+          </div>
+          <button onClick="{{ carPrev }}" aria-label="prev" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:22px;line-height:1;padding-bottom:3px;cursor:pointer;z-index:3;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center">‹</button>
+          <button onClick="{{ carNext }}" aria-label="next" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:22px;line-height:1;padding-bottom:3px;cursor:pointer;z-index:3;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center">›</button>
+          <span style="position:absolute;top:14px;left:14px;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:11px;font-weight:700;letter-spacing:.14em;padding:6px 12px;border-radius:20px;z-index:3">AVIS 3</span>
+        </div>
+        <div style="padding:22px 22px 24px;display:flex;flex-direction:column;flex:1">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:#1d2a2d">Studio · 50 m²</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 14px">
+            <span data-i18n="tag_4guests" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">4 osobe</span>
+            <span data-i18n="tag_terrace" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">Terasa</span>
+          </div>
+          <p data-i18n="a3_desc" style="font-size:15px;color:#4a5a5c;font-weight:300;flex:1">Studio od 50 m² sa bračnim krevetom i ugaonom garniturom na razvlačenje — isti koncept kao Avis 2, malo kompaktniji. Terasa ispred sa stolom i stolicama. Do 4 osobe.</p>
+          <a href="#contact" data-i18n="btn_inquire" style="margin-top:18px;text-align:center;border:1.5px solid #16697a;color:#16697a;font-size:14px;font-weight:700;letter-spacing:.04em;padding:11px;border-radius:24px">Upit za termin</a>
+        </div>
+      </article>
+
+      <!-- AVIS 4 -->
+      <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 18px 44px -30px rgba(13,76,90,.55);border:1px solid rgba(29,42,45,.06);display:flex;flex-direction:column">
+        <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#eef2f1">
+          <div data-track="1" class="car" style="display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none">
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a4-1" shape="rect" fit="cover" placeholder="Avis 4 · dodaj sliku 1"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a4-2" shape="rect" fit="cover" placeholder="Avis 4 · dodaj sliku 2"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a4-3" shape="rect" fit="cover" placeholder="Avis 4 · dodaj sliku 3"></image-slot></div>
+            <div style="flex:0 0 100%;height:100%;scroll-snap-align:center"><image-slot id="a4-4" shape="rect" fit="cover" placeholder="Avis 4 · dodaj sliku 4"></image-slot></div>
+          </div>
+          <button onClick="{{ carPrev }}" aria-label="prev" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:22px;line-height:1;padding-bottom:3px;cursor:pointer;z-index:3;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center">‹</button>
+          <button onClick="{{ carNext }}" aria-label="next" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:rgba(251,248,242,.92);color:#0d4c5a;font-size:22px;line-height:1;padding-bottom:3px;cursor:pointer;z-index:3;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center">›</button>
+          <span style="position:absolute;top:14px;left:14px;background:#e7d8be;color:#0d4c5a;font-size:11px;font-weight:700;letter-spacing:.14em;padding:6px 12px;border-radius:20px;z-index:3">AVIS 4</span>
+        </div>
+        <div style="padding:22px 22px 24px;display:flex;flex-direction:column;flex:1">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:#1d2a2d">Dvosoban · 84 m²</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 14px">
+            <span data-i18n="tag_6guests" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">6 osoba</span>
+            <span data-i18n="tag_2bed" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">2 spavaće sobe</span>
+            <span data-i18n="tag_terrace" style="font-size:12px;font-weight:600;color:#16697a;background:#eef4f4;padding:5px 11px;border-radius:14px">Privatna terasa</span>
+          </div>
+          <p data-i18n="a4_desc" style="font-size:15px;color:#4a5a5c;font-weight:300;flex:1">Najveći apartman — 84 m² sa velikom dnevnom sobom i kuhinjom, dvije spavaće sobe (svaka sa bračnim i singl krevetom) i privatnom terasom. Idealno za veće porodice i društva.</p>
+          <a href="#contact" data-i18n="btn_inquire" style="margin-top:18px;text-align:center;background:#16697a;color:#fff;font-size:14px;font-weight:700;letter-spacing:.04em;padding:12px;border-radius:24px">Upit za termin</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section style="max-width:1240px;margin:0 auto;padding:52px 28px">
+    <div class="amen-card" style="background:#f3ead9;border-radius:22px;padding:40px 36px">
+      <h3 data-i18n="amen_title" style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#0d4c5a;margin-bottom:22px">Šta vas očekuje</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px 26px">
+        <div data-i18n="am_wifi" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Besplatan WiFi</div>
+        <div data-i18n="am_ac" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Klima uređaj</div>
+        <div data-i18n="am_pool" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Bazen</div>
+        <div data-i18n="am_rest" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Restoran u kompleksu</div>
+        <div data-i18n="am_parking" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Privatni parking</div>
+        <div data-i18n="am_kitchen" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Opremljena kuhinja</div>
+        <div data-i18n="am_terrace" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Balkon / terasa</div>
+        <div data-i18n="am_tv" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">TV</div>
+        <div data-i18n="am_washer" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Veš mašina</div>
+        <div data-i18n="am_sea" style="font-size:15px;color:#3a4a4c;font-weight:500;padding-left:16px;border-left:2px solid #16697a">Blizina mora</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" style="background:#0d4c5a;color:#f3ead9;margin-top:40px">
+    <div style="max-width:1240px;margin:0 auto;padding:80px 28px">
+      <div style="text-align:center;margin-bottom:44px">
+        <p data-i18n="rev_kicker" style="color:#a9c4c9;font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-bottom:12px">Utisci gostiju</p>
+        <h2 data-i18n="rev_title" style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,4.4vw,50px);color:#fff">Šta kažu naši gosti</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px">
+        <figure style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px">
+          <div style="color:#e7d8be;font-size:22px;letter-spacing:3px;margin-bottom:14px">★★★★★</div>
+          <blockquote data-i18n="r1_text" style="font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.4;color:#fff;font-style:italic">„Predivan smještaj, čist i miran. Bazen i restoran su nam učinili odmor bezbrižnim. Vraćamo se sigurno!“</blockquote>
+          <figcaption data-i18n="r1_author" style="margin-top:18px;font-size:14px;color:#a9c4c9;font-weight:600">Marija i Nikola · Beograd</figcaption>
+        </figure>
+        <figure style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px">
+          <div style="color:#e7d8be;font-size:22px;letter-spacing:3px;margin-bottom:14px">★★★★★</div>
+          <blockquote data-i18n="r2_text" style="font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.4;color:#fff;font-style:italic">„Domaćini su vrhunski, apartman prostran i savršeno opremljen. Lokacija mirna, a more nadohvat ruke.“</blockquote>
+          <figcaption data-i18n="r2_author" style="margin-top:18px;font-size:14px;color:#a9c4c9;font-weight:600">Familie Weber · Wien</figcaption>
+        </figure>
+        <figure style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px">
+          <div style="color:#e7d8be;font-size:22px;letter-spacing:3px;margin-bottom:14px">★★★★★</div>
+          <blockquote data-i18n="r3_text" style="font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.4;color:#fff;font-style:italic">„Отличное место для семейного отдыха. Чисто, уютно, бассейн и парковка — всё как обещали.“</blockquote>
+          <figcaption data-i18n="r3_author" style="margin-top:18px;font-size:14px;color:#a9c4c9;font-weight:600">Елена · Москва</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location" style="max-width:1240px;margin:0 auto;padding:80px 28px 56px">
+    <div class="cols2" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+      <div>
+        <p data-i18n="loc_kicker" style="color:#16697a;font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-bottom:12px">Lokacija</p>
+        <h2 data-i18n="loc_title" style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,4vw,46px);color:#1d2a2d;line-height:1.05">Sutorina, Igalo</h2>
+        <p style="font-size:17px;color:#3a4a4c;margin-top:16px;font-weight:500">Vojvode Luke Vukalovića 5, Igalo</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:26px">
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#16697a;min-width:64px">~1 km</span><span data-i18n="loc_d1" style="color:#4a5a5c;font-size:15px">do najbliže plaže u Igalu</span></div>
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#16697a;min-width:64px">2 km</span><span data-i18n="loc_d2" style="color:#4a5a5c;font-size:15px">od Instituta „dr Simo Milošević“</span></div>
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#16697a;min-width:64px">Herceg Novi</span><span data-i18n="loc_d3" style="color:#4a5a5c;font-size:15px">centar na par minuta vožnje</span></div>
+        </div>
+      </div>
+      <div style="border-radius:18px;overflow:hidden;box-shadow:0 18px 44px -30px rgba(13,76,90,.55);aspect-ratio:4/3">
+        <iframe title="Mapa AVIS Residence" src="https://www.google.com/maps?q=Vojvode+Luke+Vukalovica+5+Igalo+Herceg+Novi&amp;output=embed" style="border:0;width:100%;height:100%" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background:#f3ead9;margin-top:20px">
+    <div style="max-width:1080px;margin:0 auto;padding:80px 28px">
+      <div style="text-align:center;margin-bottom:44px">
+        <p data-i18n="c_kicker" style="color:#16697a;font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-bottom:12px">Rezervacija</p>
+        <h2 data-i18n="c_title" style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,4.6vw,54px);color:#0d4c5a">Pošaljite upit</h2>
+        <p data-i18n="c_sub" style="font-size:17px;color:#4a5a5c;max-width:520px;margin:14px auto 0;font-weight:300">Popunite formu i poslaćemo vam potvrdu dostupnosti i cijene putem WhatsApp-a ili poziva.</p>
+      </div>
+
+      <div class="cols2" style="display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:start">
+        <form onSubmit="{{ submitInquiry }}" style="background:#fff;border-radius:20px;padding:32px;box-shadow:0 18px 44px -32px rgba(13,76,90,.5)">
+          <div class="form2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <label style="display:flex;flex-direction:column;gap:6px"><span data-i18n="f_name" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c6b6d">Ime i prezime</span><input name="name" required="" style="border:1px solid rgba(29,42,45,.18);border-radius:10px;padding:11px 12px;font-size:15px;background:#fbf8f2"></label>
+            <label style="display:flex;flex-direction:column;gap:6px"><span data-i18n="f_phone" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c6b6d">Telefon / WhatsApp</span><input name="phone" style="border:1px solid rgba(29,42,45,.18);border-radius:10px;padding:11px 12px;font-size:15px;background:#fbf8f2"></label>
+            <label style="display:flex;flex-direction:column;gap:6px"><span data-i18n="f_apt" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c6b6d">Apartman</span>
+              <select name="apt" style="border:1px solid rgba(29,42,45,.18);border-radius:10px;padding:11px 12px;font-size:15px;background:#fbf8f2">
+                <option>Avis 1 · Studio 27 m²</option>
+                <option>Avis 2 · Studio 50 m²</option>
+                <option>Avis 3 · Studio 40 m²</option>
+                <option>Avis 4 · Dvosoban 84 m²</option>
+                <option data-i18n="f_any">Bilo koji / nisam siguran</option>
+              </select>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px"><span data-i18n="f_guests" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c6b6d">Broj gostiju</span><input name="guests" type="number" min="1" value="2" style="border:1px solid rgba(29,42,45,.18);border-radius:10px;padding:11px 12px;font-size:15px;background:#fbf8f2"></label>
+            <label style="display:flex;flex-direction:column;gap:6px"><span data-i18n="f_in" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c6b6d">Dolazak</span><input name="checkin" type="date" style="border:1px solid rgba(29,42,45,.18);border-radius:10px;padding:11px 12px;font-size:15px;background:#fbf8f2"></label>
+            <label style="display:flex;flex-direction:column;gap:6px"><span data-i18n="f_out" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c6b6d">Odlazak</span><input name="checkout" type="date" style="border:1px solid rgba(29,42,45,.18);border-radius:10px;padding:11px 12px;font-size:15px;background:#fbf8f2"></label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:6px;margin-top:16px"><span data-i18n="f_msg" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c6b6d">Poruka</span><textarea name="message" rows="3" style="border:1px solid rgba(29,42,45,.18);border-radius:10px;padding:11px 12px;font-size:15px;background:#fbf8f2;resize:vertical"></textarea></label>
+          <button type="submit" data-i18n="f_send" style="margin-top:20px;width:100%;background:#16697a;color:#fff;border:none;font-size:15px;font-weight:700;letter-spacing:.04em;padding:15px;border-radius:28px;cursor:pointer">Pošalji preko WhatsApp-a</button>
+          <p data-i18n="f_note" style="text-align:center;font-size:12px;color:#8a9799;margin-top:12px">Otvara WhatsApp sa popunjenom porukom — bez obaveza.</p>
+        </form>
+
+        <aside style="display:flex;flex-direction:column;gap:16px">
+          <div style="background:#fff;border-radius:18px;padding:24px">
+            <p data-i18n="ct_direct" style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a9799;margin-bottom:14px">Direktan kontakt</p>
+            <div style="margin-bottom:16px">
+              <p style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#1d2a2d">Zorica</p>
+              <p data-i18n="ct_zorica" style="font-size:13px;color:#8a9799;margin-bottom:4px">Srpski / crnogorski</p>
+              <a href="tel:+38265641724" style="font-size:16px;font-weight:600">+382 65 641 724</a>
+            </div>
+            <div>
+              <p style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#1d2a2d">Rade</p>
+              <p data-i18n="ct_rade" style="font-size:13px;color:#8a9799;margin-bottom:4px">English / Deutsch</p>
+              <a href="tel:+436677935031" style="font-size:16px;font-weight:600">+43 667 793 5031</a>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px">
+            <a href="https://wa.me/38265641724" target="_blank" style="flex:1;text-align:center;background:#16697a;color:#fff;font-weight:700;font-size:14px;padding:13px;border-radius:14px">WhatsApp</a>
+            <a href="https://instagram.com/apartmaniavis.igalo" target="_blank" style="flex:1;text-align:center;background:#fff;color:#16697a;font-weight:700;font-size:14px;padding:13px;border-radius:14px">Instagram</a>
+            <a href="https://tiktok.com/@avis.igalo.hercegnovi" target="_blank" style="flex:1;text-align:center;background:#fff;color:#16697a;font-weight:700;font-size:14px;padding:13px;border-radius:14px">TikTok</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0d4c5a;color:#a9c4c9">
+    <div style="max-width:1240px;margin:0 auto;padding:44px 28px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between">
+      <div>
+        <img src="uploads/Foto%2015.06.26,%2014%2057%2056.png" alt="AVIS Apartments" style="height:92px;width:auto;display:block;background:#fff;border-radius:14px;padding:10px 14px">
+        <p data-i18n="foot_addr" style="font-size:13px;margin-top:6px">Vojvode Luke Vukalovića 5, Igalo · Crna Gora</p>
+      </div>
+      <div style="display:flex;gap:22px;font-size:13px;font-weight:600">
+        <a href="https://instagram.com/apartmaniavis.igalo" target="_blank" style="color:#e7d8be">Instagram</a>
+        <a href="https://tiktok.com/@avis.igalo.hercegnovi" target="_blank" style="color:#e7d8be">TikTok</a>
+        <a href="https://wa.me/38265641724" target="_blank" style="color:#e7d8be">WhatsApp</a>
+      </div>
+      <p style="font-size:12px;color:#6f8d92;width:100%">© 2026 Avis Residence · Sutorina, Igalo</p>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: 'me' };
+
+  dict = {
+    en: {
+      nav_apts:'Apartments', nav_gallery:'Gallery', nav_reviews:'Reviews', nav_location:'Location', nav_contact:'Contact', btn_book:'Book now',
+      hero_kicker:'Sutorina · Igalo · Montenegro',
+      hero_sub:'Your perfect getaway — 4 modern apartments with a swimming pool and restaurant, in a peaceful spot near the sea and Herceg Novi.',
+      hero_cta1:'Send inquiry', hero_cta2:'Book via WhatsApp',
+      feat_apts:'Modern apartments', feat_sea:'To nearest beach', feat_pool:'Pool & restaurant', feat_parking:'Free parking',
+      about_kicker:'Welcome', about_title:'Comfort, rest and first-class service',
+      about_p1:'Ideal for couples, families and friends who want a carefree holiday on the Montenegrin coast. Enjoy the calm, the sun and the Mediterranean atmosphere — all in one place.',
+      apts_kicker:'Accommodation', apts_title:'Our four apartments',
+      apts_sub:'Every apartment has air-conditioning, WiFi, an equipped kitchen, a bathroom and a terrace.',
+      tag_4guests:'4 guests', tag_6guests:'6 guests', tag_terrace:'Terrace', tag_terrace30:'30 m² terrace', tag_2bed:'2 bedrooms',
+      a1_desc:'A one-room studio: a bunk double bed and a sofa bed, a fully equipped kitchen and a large 30 m² terrace. Sleeps up to 4.',
+      a2_desc:'A spacious 50 m² studio with a double bed and a corner sofa bed, kitchen and bathroom. A small terrace with table and chairs out front. Up to 4 guests.',
+      a3_desc:'A 40 m² studio with a double bed and a corner sofa bed — same concept as Avis 2, slightly more compact. Terrace with table and chairs out front. Up to 4 guests.',
+      a4_desc:'The largest apartment — 84 m² with a large living room and kitchen, two bedrooms (each with a double and a single bed) and a private terrace. Perfect for bigger families and groups.',
+      btn_inquire:'Ask about dates',
+      amen_title:'What awaits you', am_wifi:'Free WiFi', am_ac:'Air conditioning', am_pool:'Swimming pool', am_rest:'On-site restaurant', am_parking:'Private parking', am_kitchen:'Equipped kitchen', am_terrace:'Balcony / terrace', am_tv:'TV', am_washer:'Washing machine', am_sea:'Close to the sea',
+      gal_kicker:'Gallery', gal_title:'A look at Avis Residence',
+      rev_kicker:'Guest reviews', rev_title:'What our guests say',
+      r1_text:'“Beautiful place, clean and quiet. The pool and restaurant made our holiday completely carefree. We will definitely be back!”', r1_author:'Marija & Nikola · Belgrade',
+      r2_text:'“Wonderful hosts, spacious and perfectly equipped apartment. Quiet location with the sea just a short walk away.”', r2_author:'The Weber family · Vienna',
+      r3_text:'“A great place for a family holiday. Clean, cosy, pool and parking — everything as promised.”', r3_author:'Elena · Moscow',
+      loc_kicker:'Location', loc_title:'Sutorina, Igalo',
+      loc_d1:'to the nearest beach in Igalo', loc_d2:'from the “Dr Simo Milošević” Institute', loc_d3:'town centre a few minutes\u2019 drive away',
+      c_kicker:'Booking', c_title:'Send an inquiry',
+      c_sub:'Fill in the form and we\u2019ll confirm availability and price via WhatsApp or a call.',
+      f_name:'Full name', f_phone:'Phone / WhatsApp', f_apt:'Apartment', f_any:'Any / not sure', f_guests:'Guests', f_in:'Check-in', f_out:'Check-out', f_msg:'Message', f_send:'Send via WhatsApp',
+      f_note:'Opens WhatsApp with a pre-filled message — no obligation.',
+      ct_direct:'Direct contact', ct_zorica:'Serbian / Montenegrin', ct_rade:'English / German',
+      foot_addr:'Vojvode Luke Vukalovića 5, Igalo · Montenegro'
+    },
+    ru: {
+      nav_apts:'Апартаменты', nav_gallery:'Галерея', nav_reviews:'Отзывы', nav_location:'Локация', nav_contact:'Контакт', btn_book:'Забронировать',
+      hero_kicker:'Сутоморина · Игало · Черногория',
+      hero_sub:'Ваш идеальный отдых — 4 современных апартамента с бассейном и рестораном, в тихом месте рядом с морем и Херцег-Нови.',
+      hero_cta1:'Отправить запрос', hero_cta2:'Бронь через WhatsApp',
+      feat_apts:'Современных апартамента', feat_sea:'До ближайшего пляжа', feat_pool:'Бассейн и ресторан', feat_parking:'Бесплатная парковка',
+      about_kicker:'Добро пожаловать', about_title:'Комфорт, отдых и первоклассный сервис',
+      about_p1:'Идеально для пар, семей и друзей, которые хотят беззаботный отдых на черногорском побережье. Наслаждайтесь спокойствием, солнцем и средиземноморской атмосферой — всё в одном месте.',
+      apts_kicker:'Размещение', apts_title:'Наши четыре апартамента',
+      apts_sub:'В каждом апартаменте есть кондиционер, WiFi, оборудованная кухня, ванная и терраса.',
+      tag_4guests:'4 гостя', tag_6guests:'6 гостей', tag_terrace:'Терраса', tag_terrace30:'Терраса 30 м²', tag_2bed:'2 спальни',
+      a1_desc:'Студия в одной комнате: двухъярусная двуспальная кровать и раскладной диван, полностью оборудованная кухня и большая терраса 30 м². До 4 человек.',
+      a2_desc:'Просторная студия 50 м² с двуспальной кроватью и угловым раскладным диваном, кухней и ванной. Перед входом небольшая терраса со столом и стульями. До 4 человек.',
+      a3_desc:'Студия 40 м² с двуспальной кроватью и угловым раскладным диваном — та же концепция, что и Avis 2, немного компактнее. Терраса со столом и стульями. До 4 человек.',
+      a4_desc:'Самый большой апартамент — 84 м² с большой гостиной и кухней, две спальни (в каждой двуспальная и односпальная кровать) и частная терраса. Идеально для больших семей и компаний.',
+      btn_inquire:'Узнать о датах',
+      amen_title:'Что вас ждёт', am_wifi:'Бесплатный WiFi', am_ac:'Кондиционер', am_pool:'Бассейн', am_rest:'Ресторан в комплексе', am_parking:'Частная парковка', am_kitchen:'Оборудованная кухня', am_terrace:'Балкон / терраса', am_tv:'ТВ', am_washer:'Стиральная машина', am_sea:'Рядом с морем',
+      gal_kicker:'Галерея', gal_title:'Взгляните на Avis Residence',
+      rev_kicker:'Отзывы гостей', rev_title:'Что говорят наши гости',
+      r1_text:'«Прекрасное место, чисто и тихо. Бассейн и ресторан сделали наш отдых беззаботным. Обязательно вернёмся!»', r1_author:'Мария и Никола · Белград',
+      r2_text:'«Замечательные хозяева, просторные и прекрасно оборудованные апартаменты. Тихое место, море совсем рядом.»', r2_author:'Семья Вебер · Вена',
+      r3_text:'«Отличное место для семейного отдыха. Чисто, уютно, бассейн и парковка — всё как обещали.»', r3_author:'Елена · Москва',
+      loc_kicker:'Локация', loc_title:'Сутоморина, Игало',
+      loc_d1:'до ближайшего пляжа в Игало', loc_d2:'от Института «др Симо Милошевич»', loc_d3:'центр города в паре минут езды',
+      c_kicker:'Бронирование', c_title:'Отправьте запрос',
+      c_sub:'Заполните форму, и мы подтвердим наличие и цену через WhatsApp или по телефону.',
+      f_name:'Имя и фамилия', f_phone:'Телефон / WhatsApp', f_apt:'Апартамент', f_any:'Любой / не уверен', f_guests:'Гостей', f_in:'Заезд', f_out:'Выезд', f_msg:'Сообщение', f_send:'Отправить через WhatsApp',
+      f_note:'Откроется WhatsApp с готовым сообщением — без обязательств.',
+      ct_direct:'Прямой контакт', ct_zorica:'Сербский / черногорский', ct_rade:'Английский / немецкий',
+      foot_addr:'Vojvode Luke Vukalovića 5, Игало · Черногория'
+    }
+  };
+
+  componentDidMount() {
+    // snapshot the original (Montenegrin) copy so we can restore it
+    document.querySelectorAll('[data-i18n]').forEach(el => { el._me = el.textContent; });
+    this._highlight('me');
+  }
+
+  _highlight(lang) {
+    document.querySelectorAll('[data-lang]').forEach(b => {
+      const on = b.getAttribute('data-lang') === lang;
+      b.style.background = on ? '#16697a' : 'transparent';
+      b.style.color = on ? '#fff' : '#5c6b6d';
+    });
+  }
+
+  applyLang(lang) {
+    this.setState({ lang });
+    const d = this.dict[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (lang === 'me') { if (el._me != null) el.textContent = el._me; }
+      else if (d && d[key] != null) el.textContent = d[key];
+    });
+    this._highlight(lang);
+  }
+
+  submitInquiry(e) {
+    e.preventDefault();
+    const f = e.target;
+    const g = n => (f.elements[n] ? f.elements[n].value : '').trim();
+    const L = {
+      me: { head:'Upit za rezervaciju — AVIS RESIDENCE', name:'Ime', phone:'Telefon', apt:'Apartman', guests:'Gostiju', from:'Dolazak', to:'Odlazak', msg:'Poruka' },
+      en: { head:'Booking inquiry — AVIS RESIDENCE', name:'Name', phone:'Phone', apt:'Apartment', guests:'Guests', from:'Check-in', to:'Check-out', msg:'Message' },
+      ru: { head:'Запрос на бронь — AVIS RESIDENCE', name:'Имя', phone:'Телефон', apt:'Апартамент', guests:'Гостей', from:'Заезд', to:'Выезд', msg:'Сообщение' }
+    }[this.state.lang];
+    const lines = [
+      '*' + L.head + '*',
+      L.name + ': ' + g('name'),
+      L.phone + ': ' + g('phone'),
+      L.apt + ': ' + g('apt'),
+      L.guests + ': ' + g('guests'),
+      L.from + ': ' + g('checkin'),
+      L.to + ': ' + g('checkout'),
+      g('message') ? (L.msg + ': ' + g('message')) : ''
+    ].filter(Boolean);
+    const url = 'https://wa.me/38265641724?text=' + encodeURIComponent(lines.join('\n'));
+    window.open(url, '_blank');
+  }
+
+  carScroll(e, dir) {
+    const wrap = e.currentTarget.parentElement;
+    const t = wrap.querySelector('[data-track]');
+    if (t) t.scrollBy({ left: dir * t.clientWidth, behavior: 'smooth' });
+  }
+
+  renderVals() {
+    return {
+      carPrev: (e) => this.carScroll(e, -1),
+      carNext: (e) => this.carScroll(e, 1),
+      setLangME: () => this.applyLang('me'),
+      setLangEN: () => this.applyLang('en'),
+      setLangRU: () => this.applyLang('ru'),
+      submitInquiry: (e) => this.submitInquiry(e)
+    };
+  }
+}
+</script>
+</body>
+</html>
