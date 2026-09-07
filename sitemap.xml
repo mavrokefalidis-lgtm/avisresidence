@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://avisresidence.me/</loc><lastmod>2026-07-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://avisresidence.me/</loc>
+    <lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sr-me" href="https://avisresidence.me/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avisresidence.me/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://avisresidence.me/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://avisresidence.me/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avisresidence.me/"/>
+  </url>
+  <url>
+    <loc>https://avisresidence.me/en/</loc>
+    <lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sr-me" href="https://avisresidence.me/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avisresidence.me/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://avisresidence.me/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://avisresidence.me/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avisresidence.me/"/>
+  </url>
+  <url>
+    <loc>https://avisresidence.me/ru/</loc>
+    <lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sr-me" href="https://avisresidence.me/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avisresidence.me/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://avisresidence.me/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://avisresidence.me/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avisresidence.me/"/>
+  </url>
+  <url>
+    <loc>https://avisresidence.me/de/</loc>
+    <lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sr-me" href="https://avisresidence.me/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avisresidence.me/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://avisresidence.me/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://avisresidence.me/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avisresidence.me/"/>
+  </url>
   <url><loc>https://avisresidence.me/impressum.html</loc><lastmod>2026-07-22</lastmod><priority>0.3</priority></url>
   <url><loc>https://avisresidence.me/privatnost.html</loc><lastmod>2026-07-22</lastmod><priority>0.3</priority></url>
   <url><loc>https://avisresidence.me/kolacici.html</loc><lastmod>2026-07-22</lastmod><priority>0.3</priority></url>
